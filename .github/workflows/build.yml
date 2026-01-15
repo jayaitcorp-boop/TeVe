@@ -11,7 +11,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      # Installe Flutter 3.3.10 (compatible Dart < 3.7)
       - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.3.10'
 
       - run: flutter pub get
       - run: flutter build apk --debug
